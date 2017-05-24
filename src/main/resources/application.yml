@@ -1,0 +1,37 @@
+logging:
+  config: classpath:logback.xml
+  path: d:/logs
+server:
+  port: 80
+  session-timeout: 60
+
+spring:
+    datasource:
+        db01:
+           url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=utf-8
+           username: root
+           password: root
+           minPoolSize: 3
+           maxPoolSize: 25
+           maxLifetime: 20000
+           borrowConnectionTimeout: 30
+           loginTimeout: 30
+           maintenanceInterval: 60
+           test.maxIdleTime: 60
+           testQuery: select 1
+           mapperLocations: classpath:/com/fei/springboot/dao/db01/*.xml
+           configLocation: classpath:/mybatis-config.xml
+        db02:
+           url: jdbc:mysql://192.168.0.213:3306/test?useUnicode=true&amp;characterEncoding=utf-8
+           username: root
+           password: root
+           minPoolSize: 3
+           maxPoolSize: 25
+           maxLifetime: 20000
+           borrowConnectionTimeout: 30
+           loginTimeout: 30
+           maintenanceInterval: 60
+           test.maxIdleTime: 60
+           testQuery: select 1
+           mapperLocations: classpath:/com/fei/springboot/dao/db02/*.xml
+           configLocation: classpath:/mybatis-config.xml
